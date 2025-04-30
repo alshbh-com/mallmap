@@ -1,334 +1,1311 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  
-  <meta name="description" content="تريكوالشرقاوي هو مصنع تاساس من اكثر من 20 عام ويعد من افضل المصنع في مصر والوطن العربي  ">
-  
-  <meta name="keywords" content="تريكو الشرقاوي, triko, مصنع ملابس, "> 
-  
-  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="مصنع تريكو الشرقاوي للملابس الشتوية - جودة عالية منذ 20 عاماً في الدقهلية">
-    <meta name="keywords" content="ملابس شتوية, تريكو, أولادي, بناتي, الدقهلية, مصنع ملابس">
-    <title>تريكو الشرقاوي | مصنع ملابس شتوية أولادي وبناتي</title>
+    <title>ELFAHD App - متجرك الشامل</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="logo.png" type="image/png">
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #FFC107;
+            --accent-color: #FF5722;
+            --dark-color: #333;
+            --light-color: #f9f9f9;
+            --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --glow: 0 0 15px rgba(255, 215, 0, 0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--dark-color);
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo i {
+            margin-left: 10px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .category-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            position: relative;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .category-icon {
+            font-size: 3rem;
+            padding: 1.5rem 0;
+            color: var(--primary-color);
+        }
+        
+        .category-title {
+            padding: 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .special-offers {
+            margin-bottom: 2rem;
+        }
+        
+        .offers-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        .offers-slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 1rem;
+            padding-bottom: 1rem;
+            scroll-snap-type: x mandatory;
+        }
+        
+        .offer-card {
+            flex: 0 0 300px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            scroll-snap-align: start;
+            position: relative;
+        }
+        
+        .offer-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .offer-image {
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .offer-details {
+            padding: 1rem;
+        }
+        
+        .offer-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .offer-price {
+            color: var(--primary-color);
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        .merchant-btn {
+            display: block;
+            background: linear-gradient(45deg, #FFC107, #FF9800);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 2rem auto;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+            animation: glow 2s infinite alternate;
+            max-width: 300px;
+        }
+        
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            }
+            to {
+                box-shadow: 0 0 20px rgba(255, 215, 0, 0.9);
+            }
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            display: block;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        .restaurant-list {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .restaurant-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+        }
+        
+        .restaurant-card img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .categories {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .category-icon {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Animation for new feature */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .bounce {
+            animation: bounce 2s infinite;
+        }
+        
+        /* Pharmacy section styles */
+        .camera-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 1rem auto;
+        }
+        
+        /* Supermarket section styles */
+        .supermarket-form {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+        
+        /* Employment section styles */
+        .contact-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            display: block;
+            width: 100%;
+            margin-top: 1rem;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        /* Doctor section styles */
+        .doctor-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .doctor-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .doctor-info {
+            flex: 1;
+        }
+        
+        .doctor-name {
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+        }
+        
+        .doctor-specialty {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .doctor-rating {
+            color: var(--secondary-color);
+        }
+        
+        /* Craftsmen section styles */
+        .craftsman-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .craftsman-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .craftsman-description {
+            margin-bottom: 0.5rem;
+        }
+        
+        .craftsman-price {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+        
+        /* Shopping cart styles */
+        .cart-icon {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            z-index: 100;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: var(--accent-color);
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+        
+        .cart-modal {
+            display: none;
+            position: fixed;
+            bottom: 90px;
+            left: 20px;
+            width: 90%;
+            max-width: 400px;
+            max-height: 60vh;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            z-index: 100;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+        
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-item-name {
+            flex: 1;
+        }
+        
+        .cart-item-price {
+            font-weight: bold;
+            margin: 0 1rem;
+        }
+        
+        .cart-total {
+            font-weight: bold;
+            text-align: right;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .checkout-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            display: block;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        /* Points system */
+        .points-display {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            box-shadow: var(--shadow);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    </style>
 </head>
 <body>
-    <!-- شريط التنقل الذكي -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <img src="logo.png" alt="شعار تريكو الشرقاوي" class="logo-img">
-                <h1><span>الشرقاوي</span></h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home" class="active">الرئيسية</a></li>
-                <li><a href="#about">من نحن</a></li>
-                <li><a href="#products">المنتجات</a></li>
-                <li><a href="#gallery">معرض الصور</a></li>
-                <li><a href="#contact">اتصل بنا</a></li>
-                <li class="whatsapp-icon"><a href="https://wa.me/201210391421"><i class="fab fa-whatsapp"></i></a></li>
-            </ul>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
+    <header>
+        <div class="logo">
+            <i class="fas fa-shopping-basket"></i>
+            <span>ELFAHD App</span>
         </div>
-    </nav>
-
-    <!-- قسم الهيرو المتحرك -->
-    <header id="home" class="hero">
-        <div class="hero-slider">
-            <div class="slide active" style="background-image: url('hero1.jpg')">
-                <div class="hero-content">
-                    <h2>جودة لا تقارن منذ 20 عاماً</h2>
-                    <p>خبرتنا في صناعة التريكو تجعلنا الأفضل</p>
-                    <a href="#products" class="cta-button">تصفح المنتجات</a>
-                </div>
-            </div>
-            <div class="slide" style="background-image: url('hero2.jpg')">
-                <div class="hero-content">
-                    <h2>أجمل التصاميم للأطفال</h2>
-                    <p>تصاميمنا تحمي أطفالك من برد الشتاء القارس</p>
-                    <a href="#gallery" class="cta-button">شاهد المعرض</a>
-                </div>
-            </div>
-            <div class="slide" style="background-image: url('hero3.jpg')">
-                <div class="hero-content">
-                    <h2>خامات مستوردة بجودة عالية</h2>
-                    <p>نستخدم أفضل الخيوط المستوردة من الصين</p>
-                    <a href="#about" class="cta-button">تعرف علينا</a>
-                </div>
-            </div>
-        </div>
-        <div class="slider-controls">
-            <button class="prev-slide"><i class="fas fa-chevron-right"></i></button>
-            <button class="next-slide"><i class="fas fa-chevron-left"></i></button>
-        </div>
-        <div class="slider-dots"></div>
     </header>
-
-    <!-- قسم من نحن -->
-    <section id="about" class="about section">
-        <div class="container">
-            <h2 class="section-title">من نحن</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>تريكو الشرقاوي لتصنيع الملابس الشتوية (أولادي و بناتي) ولتجارة الجملة</p>
-                    <p>منتج تريكو الشرقاوي يتميز بجودته العالية وكفاءته، كما أنه موجود في السوق منذ أكثر من عشرين عاماً.</p>
-                    <p>معظم الخيوط التي نستخدمها في الصناعة مستوردة من الخارج (الصين)</p>
-                    <p>كما لنا باع كبير أيضاً في تجارة الخيوط (العجينه - الرمش - السبن)</p>
+    
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>متجر ELFAHD الشامل</h1>
+                <p>كل ما تحتاجه في مكان واحد</p>
+            </div>
+        </div>
+        
+        <div class="special-offers">
+            <h2 class="offers-title">العروض المميزة</h2>
+            <div class="offers-slider">
+                <div class="offer-card">
+                    <div class="offer-badge">خصم 20%</div>
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="offer-details">
+                        <div class="offer-title">وجبة لذيذة من مطعم الأصالة</div>
+                        <div class="offer-price">
+                            <span>50 ج.م</span>
+                            <span class="old-price">60 ج.م</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="info-cards">
-                    <div class="info-card">
-                        <i class="fas fa-history"></i>
-                        <h3>خبرة 20 عاماً</h3>
-                        <p>في صناعة الملابس الشتوية</p>
+                <div class="offer-card">
+                    <div class="offer-badge">عرض خاص</div>
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="offer-details">
+                        <div class="offer-title">مجموعة أدوية أساسية</div>
+                        <div class="offer-price">
+                            <span>120 ج.م</span>
+                            <span class="old-price">150 ج.م</span>
+                        </div>
                     </div>
-                    <div class="info-card">
-                        <i class="fas fa-tshirt"></i>
-                        <h3>+500 تصميم</h3>
-                        <p>تصاميم متنوعة لكل الأذواق</p>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-badge">جديد</div>
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1551218372-a32e38595b37?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="offer-details">
+                        <div class="offer-title">خدمة سباكة منزلية</div>
+                        <div class="offer-price">
+                            <span>200 ج.م</span>
+                            <span>بدءًا من</span>
+                        </div>
                     </div>
-                    <div class="info-card">
-                        <i class="fas fa-users"></i>
-                        <h3>+2000 عميل</h3>
-                        <p>عملاء راضون عن جودة منتجاتنا</p>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-badge">خصم 30%</div>
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="offer-details">
+                        <div class="offer-title">بقالة منزلية كاملة</div>
+                        <div class="offer-price">
+                            <span>300 ج.م</span>
+                            <span class="old-price">400 ج.م</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- قسم المنتجات -->
-    <section id="products" class="products section">
-        <div class="container">
-            <h2 class="section-title">منتجاتنا</h2>
-            <div class="product-categories">
-                <div class="product-category">
-                    <div class="category-header">
-                        <i class="fas fa-boy"></i>
-                        <h3>أولادي</h3>
-                    </div>
-                    <div class="category-details">
-                        <ul>
-                           
+        
+        <h2 class="offers-title">أقسام المتجر</h2>
+        <div class="categories">
+            <div class="category-card" onclick="openSection('restaurants')">
+                <div class="category-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <div class="category-title">المطاعم</div>
+            </div>
+            
+            <div class="category-card" onclick="openSection('pharmacies')">
+                <div class="category-icon">
+                    <i class="fas fa-prescription-bottle-alt"></i>
+                </div>
+                <div class="category-title">الصيدليات</div>
+            </div>
+            
+            <div class="category-card" onclick="openSection('supermarket')">
+                <div class="category-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="category-title">السوبر ماركت</div>
+            </div>
+            
+            <div class="category-card" onclick="openSection('employment')">
+                <div class="category-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="category-title">التوظيف</div>
+            </div>
+            
+            <div class="category-card" onclick="openSection('doctors')">
+                <div class="category-icon">
+                    <i class="fas fa-user-md"></i>
+                </div>
+                <div class="category-title">الأطباء</div>
+            </div>
+            
+            <div class="category-card" onclick="openSection('craftsmen')">
+                <div class="category-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <div class="category-title">الصناعيين</div>
+            </div>
+        </div>
+        
+        <a href="#" class="merchant-btn" onclick="openMerchantModal()">
+            <i class="fas fa-store"></i> أضف متجرك معنا
+        </a>
+        
+        <!-- Restaurants Section -->
+        <div id="restaurants-section" style="display: none;">
+            <h2>المطاعم</h2>
+            <div class="restaurant-list" id="restaurant-list">
+                <div class="restaurant-card" onclick="showRestaurantMenu('مطعم الأصالة')">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="مطعم الأصالة">
+                    <div>مطعم الأصالة</div>
+                    <div class="doctor-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
                     </div>
                 </div>
-                <div class="product-category">
-                    <div class="category-header">
-                        <i class="fas fa-girl"></i>
-                        <h3>بناتي</h3>
+                <div class="restaurant-card" onclick="showRestaurantMenu('مطعم الشرق')">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="مطعم الشرق">
+                    <div>مطعم الشرق</div>
+                    <div class="doctor-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
                     </div>
-                    <div class="category-details">
-                        <ul>
-                           
+                </div>
+                <div class="restaurant-card" onclick="showRestaurantMenu('مطعم اللذة')">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="مطعم اللذة">
+                    <div>مطعم اللذة</div>
+                    <div class="doctor-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
                 </div>
             </div>
             
-            <div class="materials-section">
-                <h3>الخامات المستخدمة:</h3>
-                <div class="materials-list">
-                    <div class="material-item">
-                        <i class="fas fa-circle"></i>
-                        <span>عجينه</span>
+            <div id="restaurant-menu" style="display: none; margin-top: 2rem;">
+                <h3 id="menu-title"></h3>
+                <div id="menu-items"></div>
+                <button class="submit-btn" onclick="backToRestaurants()">العودة إلى قائمة المطاعم</button>
+            </div>
+        </div>
+        
+        <!-- Pharmacies Section -->
+        <div id="pharmacies-section" style="display: none;">
+            <h2>الصيدليات</h2>
+            <p>يمكنك تصوير روشتة الدواء وسنقوم بإعدادها لك</p>
+            <button class="camera-btn" onclick="openCamera()">
+                <i class="fas fa-camera"></i> تصوير الروشتة
+            </button>
+            
+            <div class="categories" style="margin-top: 2rem;">
+                <div class="category-card" onclick="addToCart('بانادول أقراص', 25)">
+                    <div class="category-icon">
+                        <i class="fas fa-pills"></i>
                     </div>
-                    <div class="material-item">
-                        <i class="fas fa-circle"></i>
-                        <span>اسبن</span>
+                    <div class="category-title">بانادول أقراص</div>
+                    <div style="padding: 0.5rem; font-weight: bold;">25 ج.م</div>
+                </div>
+                
+                <div class="category-card" onclick="addToCart('فيتامين سي', 40)">
+                    <div class="category-icon">
+                        <i class="fas fa-capsules"></i>
                     </div>
-                    <div class="material-item">
-                        <i class="fas fa-circle"></i>
-                        <span>رمش</span>
+                    <div class="category-title">فيتامين سي</div>
+                    <div style="padding: 0.5rem; font-weight: bold;">40 ج.م</div>
+                </div>
+                
+                <div class="category-card" onclick="addToCart('كريم مرطب', 60)">
+                    <div class="category-icon">
+                        <i class="fas fa-prescription-bottle-alt"></i>
+                    </div>
+                    <div class="category-title">كريم مرطب</div>
+                    <div style="padding: 0.5rem; font-weight: bold;">60 ج.م</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Supermarket Section -->
+        <div id="supermarket-section" style="display: none;">
+            <h2>السوبر ماركت</h2>
+            <div class="supermarket-form">
+                <div class="form-group">
+                    <label for="supermarket-order">اكتب ما تحتاجه من السوبر ماركت</label>
+                    <textarea id="supermarket-order" rows="4" placeholder="مثال: 2 كيلو أرز، 1 لبن، 3 علب تونة..."></textarea>
+                </div>
+                <button class="submit-btn" onclick="completeSupermarketOrder()">أكمل الطلب</button>
+            </div>
+            
+            <h3>أو اختر من المنتجات الجاهزة</h3>
+            <div class="categories">
+                <div class="category-card" onclick="addToCart('أرز 1 كيلو', 25)">
+                    <div class="category-icon">
+                        <i class="fas fa-weight"></i>
+                    </div>
+                    <div class="category-title">أرز 1 كيلو</div>
+                    <div style="padding: 0.5rem; font-weight: bold;">25 ج.م</div>
+                </div>
+                
+                <div class="category-card" onclick="addToCart('زيت زيتون', 80)">
+                    <div class="category-icon">
+                        <i class="fas fa-wine-bottle"></i>
+                    </div>
+                    <div class="category-title">زيت زيتون</div>
+                    <div style="padding: 0.5rem; font-weight: bold;">80 ج.م</div>
+                </div>
+                
+                <div class="category-card" onclick="addToCart('علبة تونة', 15)">
+                    <div class="category-icon">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <div class="category-title">علبة تونة</div>
+                    <div style="padding: 0.5rem; font-weight: bold;">15 ج.م</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Employment Section -->
+        <div id="employment-section" style="display: none;">
+            <h2>قسم التوظيف</h2>
+            <p>إذا كنت تبحث عن فرصة عمل، اضغط على الزر للتواصل معنا</p>
+            <a href="https://wa.me/201024713976" class="contact-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> اضغط للتواصل
+            </a>
+            
+            <div style="margin-top: 2rem;">
+                <h3>وظائف متاحة حالياً:</h3>
+                <div class="doctor-card">
+                    <div class="doctor-info">
+                        <div class="doctor-name">مندوب توصيل</div>
+                        <div class="doctor-specialty">راتب أساسي + عمولة</div>
+                        <div>مطلوب للعمل فوراً مندوب توصيل لديها دراجة نارية</div>
+                    </div>
+                </div>
+                
+                <div class="doctor-card">
+                    <div class="doctor-info">
+                        <div class="doctor-name">موظف استقبال</div>
+                        <div class="doctor-specialty">راتب ثابت + حوافز</div>
+                        <div>مطلوب موظف استقبال للعمل في مقر الشركة</div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- معرض الصور -->
-    <section id="gallery" class="gallery section">
-        <div class="container">
-            <h2 class="section-title">معرض الصور</h2>
-            <div class="gallery-grid">
-                <!-- سيتم ملؤها بالصور ديناميكياً -->
-            </div>
-            <button class="load-more">عرض المزيد</button>
-        </div>
-    </section>
-
-    <!-- آراء العملاء -->
-    <section id="testimonials" class="testimonials section">
-        <div class="container">
-            <h2 class="section-title">آراء عملائنا</h2>
-            <div class="testimonials-slider">
-                <div class="testimonial active">
-                    <div class="client-img" style="background-image: url('client1.jpg')"></div>
-                    <div class="testimonial-content">
-                        <p>"منتجات تريكو الشرقاوي الأفضل في السوق من حيث الجودة والسعر"</p>
-                        <div class="client-info">
-                            <h4>محمد أحمد</h4>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="client-img" style="background-image: url('client2.jpg')"></div>
-                    <div class="testimonial-content">
-                        <p>"اشتريت لابني منذ 3 سنوات وما زالت الملابس كما هي"</p>
-                        <div class="client-info">
-                            <h4>سهام علي</h4>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="client-img" style="background-image: url('client3.jpg')"></div>
-                    <div class="testimonial-content">
-                        <p>"التصاميم جميلة والألوان لا تبهت مع الغسيل"</p>
-                        <div class="client-info">
-                            <h4>أحمد خالد</h4>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
+        
+        <!-- Doctors Section -->
+        <div id="doctors-section" style="display: none;">
+            <h2>الأطباء</h2>
+            
+            <div class="doctor-card" onclick="showDoctorProfile('د. أحمد محمد')">
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="doctor-image" alt="د. أحمد محمد">
+                <div class="doctor-info">
+                    <div class="doctor-name">د. أحمد محمد</div>
+                    <div class="doctor-specialty">أخصائي باطنة</div>
+                    <div class="doctor-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
                     </div>
                 </div>
             </div>
-            <div class="testimonial-controls">
-                <button class="prev-testimonial"><i class="fas fa-chevron-right"></i></button>
-                <button class="next-testimonial"><i class="fas fa-chevron-left"></i></button>
+            
+            <div class="doctor-card" onclick="showDoctorProfile('د. مريم علي')">
+                <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="doctor-image" alt="د. مريم علي">
+                <div class="doctor-info">
+                    <div class="doctor-name">د. مريم علي</div>
+                    <div class="doctor-specialty">أخصائي أطفال</div>
+                    <div class="doctor-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="doctor-card" onclick="showDoctorProfile('د. خالد محمود')">
+                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="doctor-image" alt="د. خالد محمود">
+                <div class="doctor-info">
+                    <div class="doctor-name">د. خالد محمود</div>
+                    <div class="doctor-specialty">أخصائي عظام</div>
+                    <div class="doctor-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- خريطة الموقع -->
-    <div class="map-section">
-        <div class="container">
-            <div id="map"></div>
+        
+        <!-- Craftsmen Section -->
+        <div id="craftsmen-section" style="display: none;">
+            <h2>الصناعيين</h2>
+            
+            <div class="craftsman-card" onclick="addToCart('خدمة سباكة', 200)">
+                <div class="craftsman-title">سباكة منزلية</div>
+                <div class="craftsman-description">إصلاح جميع أعمال السباكة المنزلية باحترافية</div>
+                <div class="craftsman-price">200 ج.م (بدءًا من)</div>
+            </div>
+            
+            <div class="craftsman-card" onclick="addToCart('خدمة كهرباء', 250)">
+                <div class="craftsman-title">كهرباء منزلية</div>
+                <div class="craftsman-description">إصلاح أعطال الكهرباء وتوصيلات جديدة</div>
+                <div class="craftsman-price">250 ج.م (بدءًا من)</div>
+            </div>
+            
+            <div class="craftsman-card" onclick="addToCart('خدمة نجارة', 300)">
+                <div class="craftsman-title">أعمال نجارة</div>
+                <div class="craftsman-description">تصنيع وإصلاح الأثاث والأبواب والشبابيك</div>
+                <div class="craftsman-price">300 ج.م (بدءًا من)</div>
+            </div>
         </div>
     </div>
-
-    <!-- اتصل بنا -->
-    <section id="contact" class="contact section">
-        <div class="container">
-            <h2 class="section-title">تواصل معنا</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <div>
-                            <h3>الهاتف</h3>
-                            <p>201210391421</p>
-                            <p>201276138550</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>العنوان</h3>
-                            <p>ميت مسعود - أجا - الدقهلية</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h3>أوقات العمل</h3>
-                            <p>24 ساعة يومياً</p>
-                            <p>ماعدا يوم الجمعة</p>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="اسمك الكريم" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="بريدك الإلكتروني" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" placeholder="رقم الهاتف" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="رسالتك" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">إرسال الرسالة</button>
-                </form>
+    
+    <!-- Merchant Modal -->
+    <div id="merchant-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('merchant-modal')">&times;</span>
+            <h2>إضافة متجر جديد</h2>
+            <p>إذا كنت تمتلك متجراً وتريد إضافته إلى منصتنا، يرجى ملء النموذج التالي:</p>
+            
+            <div class="form-group">
+                <label for="merchant-name">اسم المتجر</label>
+                <input type="text" id="merchant-name" placeholder="اسم المتجر">
             </div>
+            
+            <div class="form-group">
+                <label for="merchant-type">نوع المتجر</label>
+                <select id="merchant-type">
+                    <option value="">اختر نوع المتجر</option>
+                    <option value="restaurant">مطعم</option>
+                    <option value="pharmacy">صيدلية</option>
+                    <option value="supermarket">سوبر ماركت</option>
+                    <option value="other">أخرى</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="merchant-phone">رقم الهاتف</label>
+                <input type="tel" id="merchant-phone" placeholder="رقم الهاتف">
+            </div>
+            
+            <div class="form-group">
+                <label for="merchant-address">العنوان</label>
+                <input type="text" id="merchant-address" placeholder="العنوان">
+            </div>
+            
+            <button class="submit-btn" onclick="submitMerchantForm()">إرسال الطلب</button>
+            
+            <p style="margin-top: 1rem; text-align: center;">أو يمكنك التواصل معنا مباشرة على الواتساب</p>
+            <a href="https://wa.me/201024713976" class="contact-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> التواصل عبر الواتساب
+            </a>
         </div>
-    </section>
-
-    <!-- الفوتر -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <h3>تريكو الشرقاوي</h3>
-                    <p>مصنع متخصص في إنتاج الملابس الشتوية للأطفال منذ عام 2003</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/201210391421"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h3>روابط سريعة</h3>
-                    <ul>
-                        <li><a href="#home">الرئيسية</a></li>
-                        <li><a href="#about">من نحن</a></li>
-                        <li><a href="#products">المنتجات</a></li>
-                        <li><a href="#gallery">معرض الصور</a></li>
-                        <li><a href="#contact">اتصل بنا</a></li>
-                    </ul>
-                </div>
-                <div class="footer-newsletter">
-                    <h3>النشرة البريدية</h3>
-                    <p>اشترك ليصلك كل جديد عن عروضنا ومنتجاتنا</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="بريدك الإلكتروني">
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </form>
+    </div>
+    
+    <!-- Camera Modal -->
+    <div id="camera-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('camera-modal')">&times;</span>
+            <h2>تصوير الروشتة</h2>
+            
+            <div style="background-color: #eee; height: 300px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                <i class="fas fa-camera" style="font-size: 3rem; color: #999;"></i>
+            </div>
+            
+            <button class="camera-btn" onclick="sendPrescription()">
+                <i class="fas fa-paper-plane"></i> إرسال الروشتة
+            </button>
+            
+            <p style="margin-top: 1rem; text-align: center;">أو يمكنك التواصل معنا مباشرة على الواتساب</p>
+            <a href="https://wa.me
+            
+            
+            
+                <!-- Doctor Profile Modal -->
+    <div id="doctor-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('doctor-modal')">&times;</span>
+            <h2 id="doctor-modal-title">ملف الطبيب</h2>
+            
+            <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                <img id="doctor-modal-image" src="" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
+                <div>
+                    <h3 id="doctor-modal-name"></h3>
+                    <p id="doctor-modal-specialty" style="color: var(--primary-color);"></p>
+                    <div id="doctor-modal-rating"></div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> جميع الحقوق محفوظة لـ تريكو الشرقاوي</p>
-                <p>تصميم وتطوير: <a href="https://wa.me/201204486263" target="_blank" style="color: orange;">فريق ALSHBH</a></p>
+            
+            <div style="margin-bottom: 1rem;">
+                <h4>عن الطبيب</h4>
+                <p id="doctor-modal-bio">خبرة أكثر من 10 سنوات في مجال التخصص، حاصل على درجة الماجستير من جامعة القاهرة، عضو في الجمعية المصرية للأطباء.</p>
             </div>
+            
+            <div style="margin-bottom: 1rem;">
+                <h4>مواعيد العمل</h4>
+                <p id="doctor-modal-schedule">من السبت إلى الخميس من 5 مساءً إلى 10 مساءً</p>
+            </div>
+            
+            <button class="contact-btn" onclick="contactDoctor()">
+                <i class="fas fa-calendar-alt"></i> حجز موعد
+            </button>
         </div>
+    </div>
+    
+    <!-- Shopping Cart -->
+    <div class="cart-icon" onclick="toggleCart()">
+        <i class="fas fa-shopping-cart"></i>
+        <div class="cart-count" id="cart-count">0</div>
+    </div>
+    
+    <div class="cart-modal" id="cart-modal">
+        <h3>سلة التسوق</h3>
+        <div id="cart-items"></div>
+        <div class="cart-total">المجموع: <span id="cart-total">0</span> ج.م</div>
+        <button class="checkout-btn" onclick="checkout()">إتمام الطلب</button>
+    </div>
+    
+    <!-- Points Display -->
+    <div class="points-display">
+        <i class="fas fa-coins"></i>
+        <span id="points">150</span> نقطة
+    </div>
+    
+    <footer>
+        <div class="logo" style="justify-content: center; color: white;">
+            <i class="fas fa-shopping-basket"></i>
+            <span>ELFAHD App</span>
+        </div>
+        
+        <p>كل ما تحتاجه في مكان واحد</p>
+        
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/201024713976"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        
+        <p>© 2023 ELFAHD App. جميع الحقوق محفوظة</p>
     </footer>
 
-    <!-- زر العودة للأعلى -->
-    <button class="scroll-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- واتساب مباشر -->
-    <a href="https://wa.me/201210391421" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-    <script src="script.js"></script>
+    <script>
+        // Global variables
+        let cart = [];
+        let points = 150;
+        let currentSection = null;
+        
+        // Open section function
+        function openSection(sectionId) {
+            // Hide all sections first
+            document.querySelectorAll('[id$="-section"]').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Show the selected section
+            document.getElementById(sectionId + '-section').style.display = 'block';
+            currentSection = sectionId;
+            
+            // Special handling for restaurants section
+            if (sectionId === 'restaurants') {
+                document.getElementById('restaurant-list').style.display = 'grid';
+                document.getElementById('restaurant-menu').style.display = 'none';
+            }
+            
+            // Scroll to the section
+            document.getElementById(sectionId + '-section').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Show restaurant menu
+        function showRestaurantMenu(restaurantName) {
+            document.getElementById('restaurant-list').style.display = 'none';
+            document.getElementById('restaurant-menu').style.display = 'block';
+            document.getElementById('menu-title').textContent = `قائمة ${restaurantName}`;
+            
+            // Generate sample menu items
+            const menuItems = [
+                { name: 'وجبة كشري', price: 25, description: 'كشري بالصلصة والبصل المقلي' },
+                { name: 'وجبة مكرونة بشاميل', price: 35, description: 'مكرونة بشاميل مع قطع الدجاج' },
+                { name: 'وجبة أرز بخلية', price: 40, description: 'أرز مع خلية الدجاج' },
+                { name: 'وجبة مشاوي', price: 60, description: 'مشاوي لحم أو فراخ مع أرز وخضار' }
+            ];
+            
+            const menuItemsContainer = document.getElementById('menu-items');
+            menuItemsContainer.innerHTML = '';
+            
+            menuItems.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'doctor-card';
+                itemElement.innerHTML = `
+                    <div class="doctor-info">
+                        <div class="doctor-name">${item.name}</div>
+                        <div class="doctor-specialty">${item.description}</div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem;">
+                            <span style="font-weight: bold; color: var(--primary-color);">${item.price} ج.م</span>
+                            <button class="contact-btn" style="padding: 0.3rem 0.8rem; font-size: 0.9rem;" onclick="addToCart('${item.name}', ${item.price})">
+                                <i class="fas fa-plus"></i> إضافة
+                            </button>
+                        </div>
+                    </div>
+                `;
+                menuItemsContainer.appendChild(itemElement);
+            });
+        }
+        
+        // Back to restaurants list
+        function backToRestaurants() {
+            document.getElementById('restaurant-list').style.display = 'grid';
+            document.getElementById('restaurant-menu').style.display = 'none';
+        }
+        
+        // Show doctor profile
+        function showDoctorProfile(doctorName) {
+            const doctors = {
+                'د. أحمد محمد': {
+                    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    specialty: 'أخصائي باطنة',
+                    rating: 4.5,
+                    bio: 'خبرة أكثر من 10 سنوات في مجال التخصص، حاصل على درجة الماجستير من جامعة القاهرة، عضو في الجمعية المصرية للأطباء.',
+                    schedule: 'من السبت إلى الخميس من 5 مساءً إلى 10 مساءً'
+                },
+                'د. مريم علي': {
+                    image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    specialty: 'أخصائي أطفال',
+                    rating: 5,
+                    bio: 'استشاري طب الأطفال وحديثي الولادة، حاصلة على الدكتوراة من جامعة عين شمس، عضو في الجمعية الأوروبية لطب الأطفال.',
+                    schedule: 'من الأحد إلى الخميس من 1 ظهراً إلى 5 مساءً'
+                },
+                'د. خالد محمود': {
+                    image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    specialty: 'أخصائي عظام',
+                    rating: 4,
+                    bio: 'استشاري جراحة العظام والمفاصل، خريج جامعة الإسكندرية، عضو في الجمعية المصرية لجراحة العظام.',
+                    schedule: 'من الأحد إلى الأربعاء من 6 مساءً إلى 10 مساءً'
+                }
+            };
+            
+            const doctor = doctors[doctorName];
+            
+            document.getElementById('doctor-modal-title').textContent = doctorName;
+            document.getElementById('doctor-modal-image').src = doctor.image;
+            document.getElementById('doctor-modal-name').textContent = doctorName;
+            document.getElementById('doctor-modal-specialty').textContent = doctor.specialty;
+            document.getElementById('doctor-modal-bio').textContent = doctor.bio;
+            document.getElementById('doctor-modal-schedule').textContent = doctor.schedule;
+            
+            // Generate rating stars
+            const ratingContainer = document.getElementById('doctor-modal-rating');
+            ratingContainer.innerHTML = '';
+            
+            const fullStars = Math.floor(doctor.rating);
+            const hasHalfStar = doctor.rating % 1 >= 0.5;
+            
+            for (let i = 0; i < fullStars; i++) {
+                ratingContainer.innerHTML += '<i class="fas fa-star"></i>';
+            }
+            
+            if (hasHalfStar) {
+                ratingContainer.innerHTML += '<i class="fas fa-star-half-alt"></i>';
+            }
+            
+            for (let i = 0; i < 5 - Math.ceil(doctor.rating); i++) {
+                ratingContainer.innerHTML += '<i class="far fa-star"></i>';
+            }
+            
+            openModal('doctor-modal');
+        }
+        
+        // Contact doctor
+        function contactDoctor() {
+            const doctorName = document.getElementById('doctor-modal-name').textContent;
+            const message = `أريد حجز موعد مع ${doctorName}`;
+            window.open(`https://wa.me/201024713976?text=${encodeURIComponent(message)}`, '_blank');
+        }
+        
+        // Open camera for prescription
+        function openCamera() {
+            openModal('camera-modal');
+        }
+        
+        // Send prescription
+        function sendPrescription() {
+            alert('تم إرسال الروشتة بنجاح. سنقوم بإعداد الأدوية لك وسيتواصل معك مندوبنا قريباً.');
+            closeModal('camera-modal');
+            
+            // In a real app, you would upload the image to your server
+            // and send a notification to the WhatsApp number
+            window.open(`https://wa.me/201024713976?text=${encodeURIComponent('لقد قمت بإرسال روشتة طبية عبر التطبيق')}`, '_blank');
+        }
+        
+        // Complete supermarket order
+        function completeSupermarketOrder() {
+            const orderText = document.getElementById('supermarket-order').value;
+            
+            if (!orderText.trim()) {
+                alert('يرجى إدخال طلبك أولاً');
+                return;
+            }
+            
+            const message = `طلب سوبر ماركت:\n${orderText}`;
+            window.open(`https://wa.me/201024713976?text=${encodeURIComponent(message)}`, '_blank');
+            
+            // Add to cart as a custom order
+            addToCart('طلب سوبر ماركت', 0);
+        }
+        
+        // Add item to cart
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCart();
+            
+            // Show confirmation
+            alert(`تم إضافة ${name} إلى سلة التسوق`);
+        }
+        
+        // Update cart UI
+        function updateCart() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            cartItemsContainer.innerHTML = '';
+            
+            let total = 0;
+            
+            cart.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'cart-item';
+                itemElement.innerHTML = `
+                    <div class="cart-item-name">${item.name}</div>
+                    <div class="cart-item-price">${item.price} ج.م</div>
+                    <i class="fas fa-trash" onclick="removeFromCart('${item.name}')"></i>
+                `;
+                cartItemsContainer.appendChild(itemElement);
+                
+                total += item.price;
+            });
+            
+            document.getElementById('cart-count').textContent = cart.length;
+            document.getElementById('cart-total').textContent = total;
+        }
+        
+        // Remove item from cart
+        function removeFromCart(name) {
+            const index = cart.findIndex(item => item.name === name);
+            if (index !== -1) {
+                cart.splice(index, 1);
+                updateCart();
+            }
+        }
+        
+        // Toggle cart visibility
+        function toggleCart() {
+            const cartModal = document.getElementById('cart-modal');
+            cartModal.style.display = cartModal.style.display === 'block' ? 'none' : 'block';
+        }
+        
+        // Checkout
+        function checkout() {
+            if (cart.length === 0) {
+                alert('سلة التسوق فارغة');
+                return;
+            }
+            
+            let message = 'تفاصيل الطلب:\n';
+            let total = 0;
+            
+            cart.forEach(item => {
+                message += `- ${item.name}: ${item.price} ج.م\n`;
+                total += item.price;
+            });
+            
+            message += `\nالمجموع: ${total} ج.م`;
+            message += `\n\nالقسم: ${currentSection}`;
+            
+            window.open(`https://wa.me/201024713976?text=${encodeURIComponent(message)}`, '_blank');
+            
+            // Add points for the purchase
+            if (total > 0) {
+                const earnedPoints = Math.floor(total / 10);
+                points += earnedPoints;
+                document.getElementById('points').textContent = points;
+                alert(`تهانينا! لقد كسبت ${earnedPoints} نقطة من هذا الطلب`);
+            }
+            
+            // Clear cart
+            cart = [];
+            updateCart();
+            toggleCart();
+        }
+        
+        // Open merchant modal
+        function openMerchantModal() {
+            openModal('merchant-modal');
+        }
+        
+        // Submit merchant form
+        function submitMerchantForm() {
+            const name = document.getElementById('merchant-name').value;
+            const type = document.getElementById('merchant-type').value;
+            const phone = document.getElementById('merchant-phone').value;
+            const address = document.getElementById('merchant-address').value;
+            
+            if (!name || !type || !phone || !address) {
+                alert('يرجى ملء جميع الحقول');
+                return;
+            }
+            
+            const message = `طلب إضافة متجر جديد:\n
+الاسم: ${name}
+النوع: ${type}
+الهاتف: ${phone}
+العنوان: ${address}`;
+            
+            window.open(`https://wa.me/201024713976?text=${encodeURIComponent(message)}`, '_blank');
+            closeModal('merchant-modal');
+            alert('تم إرسال طلبك بنجاح. سنتواصل معك قريباً.');
+        }
+        
+        // Open modal
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+        
+        // Close modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+        
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCart();
+            document.getElementById('points').textContent = points;
+        });
+    </script>
 </body>
-    </html>
+                  </html>
