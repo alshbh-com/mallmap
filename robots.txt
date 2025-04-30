@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://mo22096.github.io/sitemap.xml
